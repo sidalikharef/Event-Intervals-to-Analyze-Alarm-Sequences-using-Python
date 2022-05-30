@@ -1,0 +1,127 @@
+@import '~react-pro-sidebar/dist/scss/styles.scss';
+body {
+  position: relative;
+  color: white;
+  height: 100vh;
+  background: linear-gradient(
+    200.96deg,
+    #cacaca -29.09%,
+    #d3d3d3 51.77%,
+    #ffffff 129.35%
+  );
+  font-family: sans-serif;
+  overflow-x:hidden;
+  overflow-y:hidden;
+}
+.PreProData{
+  height: 900px;
+  overflow-y: scroll;
+}
+hr {
+  margin: 0 0  !important;
+}
+
+button {
+  background-color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  appearance: none;
+  font-size: 1.3rem;
+  box-shadow: 0px 8px 28px -6px rgba(24, 39, 75, 0.12),
+    0px 18px 88px -4px rgba(24, 39, 75, 0.14);
+  transition: all ease-in 0.1s;
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+button:hover {
+  transform: scale(1.05);
+  opacity: 1;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  height: fit-content;
+  width: fit-content;
+  margin: 10px;
+}
+
+a:hover {
+  opacity: 1;
+  text-decoration: none;
+}
+.boldtxt {
+  font-weight: 500;
+}
+.Red {
+  color: red;
+}
+.textCode {
+  padding-left: 30px;
+}
+.codeEspace {
+  background-color: #ffffff;
+}
+.editbutton {
+  text-decoration: none;
+  background-color: cadetblue;
+  color: white;
+  padding: 5px 10px;
+  margin-bottom: 50px !important;
+  cursor: pointer;
+}
+.spaceMessage {
+  width: 100% !important;
+  height: 800px !important;
+  margin-top: 25px;
+  border-radius: 0.25rem;
+  background-color: #ffffff;
+
+}
+.MessageSpace{
+ overflow:'scroll';
+ overflow-x: hidden;
+ height:'85vh';
+}
+.Reciver{
+  background-color: blue;
+  color: #ffffff;
+  margin-top: 5px;
+  width: fit-content;
+  padding: 5px 10px;
+  border-radius: 10px;
+  margin-left: 10px;
+
+}
+.messageSender{
+  margin-top: 25px;
+
+}
+h4 {
+  font-size: 20px !important;
+}
+.textVariables {
+  font-size: 14px;
+}
+.drugClass {
+  font-size: 14px;
+}
+h5 {
+  font-size: 17px !important;
+}
+.codeClass {
+  font-size: 14px;
+}
+.controlClass {
+  margin-top: 10px;
+  margin-left: 200px;
+}
+.pic{
+  margin-left: -80px !important;
+ 
+}

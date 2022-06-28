@@ -14,7 +14,7 @@ const  Dashboard = () => {
   }, []);
   return (
     <>
-      <h1>PreProcecing Data Table</h1>
+      <h1>Results</h1>
       <div className="PreProData">
       <div className="container">
         <Table striped bordered hover size="sm">
@@ -41,7 +41,6 @@ const  Dashboard = () => {
         </Table>
       </div>
       </div>
-      <p>     aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa          </p>
       <br />
     </>
   );

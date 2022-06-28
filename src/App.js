@@ -1,16 +1,14 @@
 import React,{useState} from 'react';
 import { MemoryRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.scss';
-//import MessageSender from './Components/messageSender';
-
 
 import { Row,Col} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import SideBare from './Components/SideBare';
 import PreProData from './Components/PreProData';
 import Data from './Components/Data';
-import Pid from './Components/PID';
 import Dashboard from './Components/Dashboard';
+import Settings from './Components/settings';
 
 
 const Apps = () => {
@@ -18,7 +16,7 @@ const Apps = () => {
     Dashboard:"Dashboard",
     PrePro: "PrePro",
     data: "data",
-    Pid:'PID'
+    Sett: "Settings",
   };
   const [displayContent, setDisplayContent] = useState(target.Dashboard);
 
@@ -30,7 +28,8 @@ const Apps = () => {
     <Col xs={12} md={8}>
      {displayContent ===target.PrePro ?(<PreProData />
      ): displayContent === target.data ?( <Data />
-     ): displayContent === target.Pid ?( <Pid /> ): displayContent === target.Dashboard ?( <Dashboard /> ):
+     ): displayContent === target.Dashboard ?( <Dashboard />
+     ):  displayContent === target.Sett ?( <Settings />):
 
      ( console.log('nothing sorry'))}
     </Col>

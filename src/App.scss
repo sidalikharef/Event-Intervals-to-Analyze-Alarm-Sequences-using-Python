@@ -14,7 +14,7 @@ body {
   overflow-y:hidden;
 }
 .PreProData{
-  height: 900px;
+  height: 570px;
   overflow-y: scroll;
 }
 hr {
@@ -98,6 +98,9 @@ a:hover {
   margin-left: 10px;
 
 }
+.icons{
+  padding-left: 20px;
+}
 .messageSender{
   margin-top: 25px;
 
@@ -123,5 +126,5 @@ h5 {
 }
 .pic{
   margin-left: -80px !important;
- 
+
 }

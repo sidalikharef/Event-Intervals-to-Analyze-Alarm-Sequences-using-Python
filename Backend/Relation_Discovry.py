@@ -4,7 +4,7 @@ import seaborn as sns
 from collections import Counter
 import matplotlib.pyplot as plt
 from matplotlib import pyplot
-import Teloiral_Win as Algorithm
+import learningAlgorithm as Algorithm
 
 class Rule_Discovry:
     def DictSequences(DfAlarm):
@@ -41,10 +41,10 @@ class Rule_Discovry:
             r.append(strr);
         return r
 
-    def user_calcule_rols(x,df,DfAlarm):
+    def user_calcule_rols(x,df,DfAlarm,temp):
         r=[]
         rec=Algorithm.Algorithm.GetAlarms(DfAlarm)
-        m=Algorithm.Algorithm.user_calcul(DfAlarm,rec,x,4)
+        m=Algorithm.Algorithm.user_calcul(DfAlarm,rec,x,temp)
         m=Rule_Discovry.DictSequences(m)
         freq=DfAlarm['Alarm'].values.tolist()
         for i in m :
@@ -85,5 +85,14 @@ class Rule_Discovry:
                     else:
                         df.at[r,'User_Sliding']= first_slid
                         s=''
+                    df.at[r,'Proposed']= 1
 
+        return df
+    def proposed(x,df):
+        x1=df.index[df['Tag'] == x].tolist()
+        for r in x1:
+            if((float(df.at[r,'Simple_Sliding'][-11:-3]))<=(float(df.at[r,'User_Sliding'][-11:-3]))):
+                df.at[r,'Proposed']=df.at[r,'User_Sliding']
+            else:
+                df.at[r,'Proposed']=df.at[r,'Simple_Sliding']
         return df

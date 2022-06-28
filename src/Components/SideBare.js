@@ -1,6 +1,10 @@
 import React from 'react';
 import { ProSidebar, Menu, MenuItem } from 'react-pro-sidebar';
 import 'react-pro-sidebar/dist/css/styles.css';
+import { FaRegSun } from "react-icons/fa";
+import { FaWallet } from "react-icons/fa";
+
+
 
 const SideBare = ({ target, setDisplayContent }) => {
   const clickHandler = () => {
@@ -9,20 +13,20 @@ const SideBare = ({ target, setDisplayContent }) => {
   const clickHandlerone = () => {
     setDisplayContent(target.PrePro);
   };
-  const clickHandlertwo = () => {
-    setDisplayContent(target.Pid);
-  };
   const clickHandlerzero = () => {
     setDisplayContent(target.Dashboard);
   };
+  const clickHandlersett= () => {
+    setDisplayContent(target.Sett);
+  };
 
   return (
-   <ProSidebar className="col-md-12 d-none d-md-block bg-light sidebar">
+   <ProSidebar className="col-md-12 d-none d-md-block bg-light sidebar"  style={{height:"2000px"}}>
   <Menu iconShape="square">
-    <MenuItem onClick={clickHandlerzero}>Dashboard</MenuItem>
-    <MenuItem onClick={clickHandlertwo}>PI&D</MenuItem>
-    <MenuItem onClick={clickHandlerone} >DataPreProcecing CVS</MenuItem>
-    <MenuItem onClick={clickHandler} >DATA CVS</MenuItem>
+    <MenuItem onClick={clickHandlerzero}><FaWallet />  Dashboard</MenuItem>
+    <MenuItem onClick={clickHandlerone} > <FaWallet /> Pre-processing Data Table CVS</MenuItem>
+    <MenuItem onClick={clickHandler} ><FaWallet /> DATA CVS</MenuItem>
+    <MenuItem onClick={clickHandlersett}><FaRegSun /> Settings</MenuItem>
 
 
 

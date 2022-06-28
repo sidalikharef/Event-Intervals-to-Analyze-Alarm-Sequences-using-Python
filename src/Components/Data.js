@@ -14,8 +14,9 @@ const Data = () => {
   }, []);
   return (
     <>
-      <h1>PreProcecing Data Table</h1>
+      <h1> Data Table</h1>
       <div className="PreProData">
+      <div className="container">
         <Table striped bordered hover size="sm">
           <thead>
             <tr>
@@ -38,6 +39,7 @@ const Data = () => {
             ))}
           </tbody>
         </Table>
+      </div>
       </div>
     </>
   );

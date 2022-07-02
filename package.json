@@ -1,8 +1,16 @@
 {
-  "name": "fiverr",
+  "name": "alarm_correlation",
   "version": "0.1.0",
-  "description": "Fiverr React Electron Express Sass tailwind css",
+  "description": "Development of a web service for the analysis of correlated alarms.",
+  "keywords": [
+    "data Mining",
+    "alarm sequences",
+    "correlated alarms",
+    "chemical processes",
+    "nuisance alarms"
+  ],
   "private": true,
+  "author": "Sidali kharef & bekkouch Zakaria <sidalikharef@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "@electron/remote": "^2.0.8",
@@ -15,8 +23,6 @@
     "concurrently": "^7.2.0",
     "cors": "^2.8.5",
     "cross-env": "^7.0.3",
-    "electron": "^18.0.4",
-    "electron-is-dev": "^2.0.0",
     "flask": "^0.2.10",
     "mdb-react-ui-kit": "^3.0.0",
     "node-sass": "^7.0.1",
@@ -36,14 +42,59 @@
   },
   "main": "public/main.js",
   "homepage": "./",
+
+  "build": {
+    "appId": "com.my.app.id",
+    "linux": {
+      "category": "Utility",
+      "target": [
+        "deb",
+        "appImage"
+      ]
+    },
+    "deb": {
+      "depends": [
+        "gconf2",
+        "gconf-service",
+        "libnotify4",
+        "libappindicator1",
+        "libxtst6",
+        "libnss3"
+      ]
+    },
+    "win": {
+      "icon": "icon.ico"
+    },
+    "mac": {
+      "category": "public.app-category.utilities"
+
+    },
+    "files": [
+      "src/**/*",
+      "node_modules/**/*",
+      "scripts/*",
+      "public/**/*",
+      "Backend/**/*",
+      "package.json",
+      ".env",
+      ".eslintrc.js",
+      ".gitignore",
+      "yarn.lock",
+      "*"
+    ],
+    "directories": {
+      "buildResources": "build"
+    }
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "startsrv": "python app.py --prefix backend",
-    "electron:serve": "concurrently -k  \"cross-env BROWSER=none yarn start\" \"yarn electron:start",
-    "electron:start": "wait-on tcp:3000 & electron ."
+    "electron:serve": "concurrently -k  \"cross-env BROWSER=none yarn start\"  \"yarn electron:start\" \"cd backend/ && python app.py",
+    "electron:start": "wait-on tcp:3000 & electron .",
+    "electron-build": "electron-builder --win --x64 "
   },
   "eslintConfig": {
     "extends": [
@@ -66,6 +117,9 @@
   "proxy": "http://localhost:5000",
   "devDependencies": {
     "autoprefixer": "^10.4.4",
+    "electron": "^18.0.4",
+    "electron-builder": "^23.1.0",
+    "electron-is-dev": "^2.0.0",
     "eslint": "^8.16.0",
     "eslint-plugin-react": "^7.30.0",
     "postcss": "^8.4.12"

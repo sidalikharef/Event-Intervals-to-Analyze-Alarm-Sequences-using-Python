@@ -33,6 +33,16 @@ def articles():
   print(int(temp))
   return temp,datas
 
+@app.route('/table')
+def table():
+  print(datas)
+  data = pd.read_csv(datas)
+  json_obj =data.to_json(orient='records')
+  xml = dicttoxml(loads(json_obj))
+  with open("XmlFiles/Data.xml", "wb") as f:
+    f.write(xml)
+  return json_obj
+
 @app.route('/PreProData')
 def PreProData():
   print(datas)
